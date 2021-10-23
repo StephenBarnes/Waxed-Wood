@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "waxedwood:waxed_oak_stairs",
+    "waxedwood:waxed_spruce_stairs",
+    "waxedwood:waxed_birch_stairs",
+    "waxedwood:waxed_jungle_stairs",
+    "waxedwood:waxed_acacia_stairs",
+    "waxedwood:waxed_dark_oak_stairs"
+  ]
+}

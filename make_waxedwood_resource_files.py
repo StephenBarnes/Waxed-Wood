@@ -16,7 +16,7 @@ MOD_WOOD = {
         #TODO
         }
 
-assert path.exists(path.join(os.getcwd(), "make_waxedwood_resources_files.py")), "Not in correct directory"
+assert path.exists(path.join(os.getcwd(), "make_waxedwood_resource_files.py")), "Not in correct directory"
 
 resources_dir = path.join(os.getcwd(), "src", "main", "resources")
 block_model_dir = path.join(resources_dir, "assets", "waxedwood", "models", "block")
@@ -25,8 +25,9 @@ block_states_dir = path.join(resources_dir, "assets", "waxedwood", "blockstates"
 lang_file = path.join(resources_dir, "assets", "waxedwood", "lang", "en_us.json")
 block_loot_tables_dir = path.join(resources_dir, "data", "waxedwood", "loot_tables", "blocks")
 recipes_dir = path.join(resources_dir, "data", "waxedwood", "recipes")
-tags_dir = path.join(resources_dir, "data", "minecraft", "tags", "blocks")
-    # "minecraft" instead of "waxedwood", so we add to vanilla's tags eg minecraft:planks
+block_tags_dir = path.join(resources_dir, "data", "minecraft", "tags", "blocks")
+    # "minecraft" for tags instead of "waxedwood", so we add to vanilla's tags eg minecraft:planks
+item_tags_dir = path.join(resources_dir, "data", "minecraft", "tags", "items")
 
 def item_model_for(name):
     return f"""{{
@@ -688,7 +689,11 @@ with open(lang_file, "w") as lang:
 # TAGS
 ########################################################################
 
-def make_tags(fname, namefunc):
+def make_tags(fname, namefunc, tags_dir=None):
+    if tags_dir is None:
+        make_tags(fname, namefunc, block_tags_dir)
+        make_tags(fname, namefunc, item_tags_dir)
+        return
     with open(path.join(tags_dir, f"{fname}.json"), "w") as tags:
         tags.write(f"""{{
   "replace": false,
@@ -706,28 +711,29 @@ make_tags("wooden_stairs", lambda wood: f"{wood}_stairs")
     # Note we don't need to add "stairs" tag, since it already includes wooden_stairs tag
 make_tags("wooden_slabs", lambda wood: f"{wood}_slab")
     # Note we don't need to add "slabs" tag, since it already includes wooden_slabs tag
-make_tags("fence_gates", lambda wood: f"{wood}_fence_gate")
+make_tags("fence_gates", lambda wood: f"{wood}_fence_gate", block_tags_dir)
 make_tags("fences", lambda wood: f"{wood}_fence")
 make_tags("logs", lambda wood: f"{wood}_log")
 
-with open(path.join(tags_dir, "non_flammable_wood.json"), "w") as tags:
-    tags.write(f"""{{
-  "replace": false,
-  "values": [\n""")
-    for i, wood in enumerate(VANILLA_WOOD):
-        tags.write(f"    \"waxedwood:waxed_{wood}_planks\",\n")
-        tags.write(f"    \"waxedwood:waxed_{wood}_stairs\",\n")
-        tags.write(f"    \"waxedwood:waxed_{wood}_slab\",\n")
-        tags.write(f"    \"waxedwood:waxed_{wood}_fence_gate\",\n")
-        tags.write(f"    \"waxedwood:waxed_{wood}_fence\",\n")
-        tags.write(f"    \"waxedwood:waxed_{wood}_log\",\n")
-        tags.write(f"    \"waxedwood:waxed_stripped_{wood}_log\",\n")
-        tags.write(f"    \"waxedwood:waxed_{wood}_wood\",\n")
-        tags.write(f"    \"waxedwood:waxed_stripped_{wood}_wood\"")
-        if i != len(VANILLA_WOOD) - 1:
-            tags.write(",")
-        tags.write("\n")
-    tags.write("  ]\n}")
+for tags_dir in (block_tags_dir, item_tags_dir):
+    with open(path.join(tags_dir, "non_flammable_wood.json"), "w") as tags:
+        tags.write(f"""{{
+      "replace": false,
+      "values": [\n""")
+        for i, wood in enumerate(VANILLA_WOOD):
+            tags.write(f"    \"waxedwood:waxed_{wood}_planks\",\n")
+            tags.write(f"    \"waxedwood:waxed_{wood}_stairs\",\n")
+            tags.write(f"    \"waxedwood:waxed_{wood}_slab\",\n")
+            tags.write(f"    \"waxedwood:waxed_{wood}_fence_gate\",\n")
+            tags.write(f"    \"waxedwood:waxed_{wood}_fence\",\n")
+            tags.write(f"    \"waxedwood:waxed_{wood}_log\",\n")
+            tags.write(f"    \"waxedwood:waxed_stripped_{wood}_log\",\n")
+            tags.write(f"    \"waxedwood:waxed_{wood}_wood\",\n")
+            tags.write(f"    \"waxedwood:waxed_stripped_{wood}_wood\"")
+            if i != len(VANILLA_WOOD) - 1:
+                tags.write(",")
+            tags.write("\n")
+        tags.write("  ]\n}")
 
 
 # RECIPES
@@ -1022,7 +1028,7 @@ for wood in VANILLA_WOOD:
     make_fence_gate_recipe(wood)
     make_fence_recipe(wood)
     make_wood_recipe(wood)
-    #make_stick_recipe(wood) -- not necessary, it's already defined for the tag "planks"
+    #make_stick_recipe(wood) -- not necessary, vanilla recipe is for tag "planks"
     make_sign_recipe(wood)
     make_door_recipe(wood)
     make_trapdoor_recipe(wood)
