@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "waxedwood:waxed_oak_slab",
+    "waxedwood:waxed_spruce_slab",
+    "waxedwood:waxed_birch_slab",
+    "waxedwood:waxed_jungle_slab",
+    "waxedwood:waxed_acacia_slab",
+    "waxedwood:waxed_dark_oak_slab"
+  ]
+}

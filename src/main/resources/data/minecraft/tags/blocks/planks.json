@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "waxedwood:waxed_oak_planks",
+    "waxedwood:waxed_spruce_planks",
+    "waxedwood:waxed_birch_planks",
+    "waxedwood:waxed_jungle_planks",
+    "waxedwood:waxed_acacia_planks",
+    "waxedwood:waxed_dark_oak_planks"
+  ]
+}

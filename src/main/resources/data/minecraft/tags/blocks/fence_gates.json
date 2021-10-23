@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "waxedwood:waxed_oak_fence_gate",
+    "waxedwood:waxed_spruce_fence_gate",
+    "waxedwood:waxed_birch_fence_gate",
+    "waxedwood:waxed_jungle_fence_gate",
+    "waxedwood:waxed_acacia_fence_gate",
+    "waxedwood:waxed_dark_oak_fence_gate"
+  ]
+}
