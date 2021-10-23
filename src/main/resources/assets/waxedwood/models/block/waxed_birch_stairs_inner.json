@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "waxedwood:block/waxed_birch_planks",
+    "top": "waxedwood:block/waxed_birch_planks",
+    "side": "waxedwood:block/waxed_birch_planks"
+  }
+}

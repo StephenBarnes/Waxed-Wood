@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "waxedwood:waxed_spruce_slab"
+    }
+  ],
+  "result": {
+    "item": "minecraft:spruce_slab"
+  }
+}

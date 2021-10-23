@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:birch_log"
+    },
+    {
+      "item": "minecraft:honeycomb"
+    }
+  ],
+  "result": {
+    "item": "waxedwood:waxed_birch_log"
+  }
+}

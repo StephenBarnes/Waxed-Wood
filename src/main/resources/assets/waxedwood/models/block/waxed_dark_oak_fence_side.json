@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "waxedwood:block/waxed_dark_oak_planks"
+  }
+}

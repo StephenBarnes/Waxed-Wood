@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bark",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "waxedwood:waxed_spruce_log"
+    }
+  },
+  "result": {
+    "item": "waxedwood:waxed_spruce_wood",
+    "count": 3
+  }
+}

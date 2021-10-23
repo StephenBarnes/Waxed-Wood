@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_post",
+  "textures": {
+    "texture": "waxedwood:block/waxed_acacia_planks"
+  }
+}

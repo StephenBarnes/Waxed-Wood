@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "minecraft:block/spruce_wood",
+      "model": "waxedwood:block/waxed_spruce_wood",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "minecraft:block/spruce_wood"
+      "model": "waxedwood:block/waxed_spruce_wood"
     },
     "axis=z": {
-      "model": "minecraft:block/spruce_wood",
+      "model": "waxedwood:block/waxed_spruce_wood",
       "x": 90
     }
   }

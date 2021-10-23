@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "waxedwood:waxed_acacia_fence_gate"
+    }
+  ],
+  "result": {
+    "item": "minecraft:acacia_fence_gate"
+  }
+}

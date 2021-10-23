@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "waxedwood:waxed_oak_wood"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oak_wood"
+  }
+}

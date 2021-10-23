@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "waxedwood:waxed_oak_stripped_wood"
+          "name": "waxedwood:waxed_stripped_oak_wood"
         }
       ],
       "conditions": [

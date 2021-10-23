@@ -1,0 +1,26 @@
+{
+    "waxedwoodstep": {
+        "sounds": [
+        { "name": "waxedwood:woodstep1", "stream": true },
+        { "name": "waxedwood:woodstep2", "stream": true },
+        { "name": "waxedwood:woodstep3", "stream": true },
+        { "name": "waxedwood:woodstep4", "stream": true },
+        { "name": "waxedwood:woodstep5", "stream": true },
+        { "name": "waxedwood:woodstep6", "stream": true },
+        { "name": "waxedwood:woodstep7", "stream": true },
+        { "name": "waxedwood:woodstep8", "stream": true },
+        { "name": "waxedwood:woodstep9", "stream": true },
+        { "name": "waxedwood:woodstep10", "stream": true },
+        { "name": "waxedwood:woodstep11", "stream": true },
+        { "name": "waxedwood:woodstep12", "stream": true }
+        ]
+    },
+    "waxedwoodbreak": {
+        "sounds": [
+        { "name": "waxedwood:woodbreak1", "stream": true },
+        { "name": "waxedwood:woodbreak2", "stream": true },
+        { "name": "waxedwood:woodbreak3", "stream": true },
+        { "name": "waxedwood:woodbreak4", "stream": true }
+        ]
+    }
+}

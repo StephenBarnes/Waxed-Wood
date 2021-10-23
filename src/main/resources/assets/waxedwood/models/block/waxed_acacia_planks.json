@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "waxedwood:block/waxed_acacia_planks"
+  }
+}

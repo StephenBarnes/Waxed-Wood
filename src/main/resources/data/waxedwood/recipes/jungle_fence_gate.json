@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "waxedwood:waxed_jungle_fence_gate"
+    }
+  ],
+  "result": {
+    "item": "minecraft:jungle_fence_gate"
+  }
+}
