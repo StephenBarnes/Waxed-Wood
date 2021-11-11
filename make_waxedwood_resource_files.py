@@ -769,25 +769,10 @@ def recipe_for_removing_wax(name):
 }}"""
 
 def make_basic_recipes_for(name):
-    with open(path.join(recipes_dir, f"{name}.json"), "w") as f:
+    with open(path.join(recipes_dir, f"{name}_from_waxed.json"), "w") as f:
         f.write(recipe_for_removing_wax(name))
-    with open(path.join(recipes_dir, f"waxed_{name}.json"), "w") as f:
+    with open(path.join(recipes_dir, f"waxed_{name}_with_honeycomb.json"), "w") as f:
         f.write(recipe_for_waxed(name))
-
-def make_logs_plank_recipe(wood):
-    with open(path.join(recipes_dir, f"waxed_{wood}_planks.json"), "w") as f:
-        f.write(f"""{{
-  "type": "minecraft:crafting_shapeless",
-  "ingredients": [
-    {{
-      "item": "waxedwood:waxed_{wood}_log"
-    }}
-  ],
-  "result": {{
-    "item": "minecraft:{wood}_planks",
-    "amount": 4
-  }}
-}}""")
 
 def make_stairs_recipe(wood):
     with open(path.join(recipes_dir, f"waxed_{wood}_stairs.json"), "w") as f:
@@ -1022,7 +1007,6 @@ for wood in VANILLA_WOOD:
     make_basic_recipes_for(f"stripped_{wood}_log")
     make_basic_recipes_for(f"{wood}_wood")
     make_basic_recipes_for(f"stripped_{wood}_wood")
-    make_logs_plank_recipe(wood)
     make_stairs_recipe(wood)
     make_slab_recipe(wood)
     make_fence_gate_recipe(wood)
